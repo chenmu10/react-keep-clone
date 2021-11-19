@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header'
+import NewNote from "./components/NewNote"
+import NotesList from "./components/NotesList"
+import {useState} from "react"
 
 function App() {
+  const initialNotes = [{id:1, title:'note1',content: ''},{id:2, title:'great ',content: 'this is great'},
+    {id:3, title:'hi chen',content: 'shalom shalom'},{id:4, title:'great ',content: 'this is great'},
+    {id:5, title:'hi chen',content: 'shalom shalom'},{id:6, title:'great ',content: 'this is great'}]
+
+  const [notes, setNotes] = useState(initialNotes);
+
+    function addNote(newNote) {
+        setNotes( [notes,newNote]);
+    }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <NewNote addNewNoteHandler={addNote}/>
+      <NotesList notesList={notes}/>
     </div>
   );
 }
