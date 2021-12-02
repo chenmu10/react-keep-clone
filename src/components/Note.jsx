@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MyComponent = ({title,content}) => {
+const Note = ({title,content}) => {
     return (
         <div className="note-container">
             <div className="note-title">{title}</div>
@@ -9,4 +9,4 @@ const MyComponent = ({title,content}) => {
     );
 };
 
-export default MyComponent;
+export default Note;
