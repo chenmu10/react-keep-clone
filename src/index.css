@@ -34,7 +34,7 @@ li {
   flex-wrap: wrap;
 }
 .note-container {
-  border: 1px solid gray;
+  border: 1px solid rgb(214, 211, 211);
   border-radius: 10px;
   margin: 10px;
   padding: 20px;
