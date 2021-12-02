@@ -4,7 +4,8 @@ const NewNote = (props) => {
     let isOpenFullForm=false;
     //const OpenForm = () => {return <div><input type="text" placeholder="Title"/><input placeholder="take a note..." type="text" /></div>}
 
-    const [newNote, setNote] = useState('');
+    const [text, setText] = useState('');
+    const [newNote, setNote] = useState({});
 
     function openFullForm(e) {
         e.preventDefault();
@@ -12,19 +13,28 @@ const NewNote = (props) => {
     }
 
     function addNewNote(e) {
-        setNote({id:9, title:'new one',content: 'content content'});
-        props.addNewNoteHandler(newNote);
+        const id = new Date().getTime();
+        const note = { id: id, title: text, content: text };
+        console.log({ note });
+        
+        props.addNewNoteHandler(note);
         e.preventDefault();
     }
 
     return (
-        <div className="new-note-container">
-            <input id="new-note"  type="text" placeholder="Take a note..." value={newNote} onChange={(e)=>setNote(e.target.value)}/>
-            <button onClick={addNewNote}>Save</button>
+      <div className="new-note-container">
+        <input
+          id="new-note"
+          type="text"
+          placeholder="Take a note..."
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+        />
+        <button onClick={addNewNote}>Save</button>
 
-            {/*{isOpenFullForm && <OpenForm />}*/}
-        </div>
-    )
+        {/*{isOpenFullForm && <OpenForm />}*/}
+      </div>
+    );
 
 };
 

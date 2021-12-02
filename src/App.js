@@ -17,7 +17,7 @@ function App() {
   const [notes, setNotes] = useState(initialNotes);
 
     function addNote(newNote) {
-        setNotes( [notes,newNote]);
+        setNotes( [...notes,newNote]);
     }
 
   return (
