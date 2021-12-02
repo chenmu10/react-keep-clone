@@ -17,8 +17,13 @@ function App() {
   const [notes, setNotes] = useState(initialNotes);
 
     function addNote(newNote) {
-        setNotes( [notes,newNote]);
+        setNotes( [...notes,newNote]);
     }
+  
+  function deleteNote(id) {
+    setNotes(notes.filter((note) => note.id !== id));
+
+  }
 
   return (
     <div className="App">
