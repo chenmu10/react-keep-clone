@@ -1,7 +1,7 @@
 import './App.css';
-import Header from './components/Header'
-import NewNote from "./components/NewNote"
-import NotesList from "./components/NotesList"
+import Header from './components/Header.jsx'
+import NewNote from "./components/NewNote.jsx";
+import NotesList from "./components/NotesList.jsx";
 import {useState} from "react"
 
 function App() {
