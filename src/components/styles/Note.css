@@ -1,0 +1,14 @@
+.note-container {
+  border: 1px solid rgb(214, 211, 211);
+  border-radius: 10px;
+  margin: 10px;
+  padding: 15px 70px 50px 15px;
+  min-width: 60px;
+  min-height: 60px;
+line-height: 1.25rem;
+max-width: min-content;
+}
+
+.note-title {
+    font-weight: 700;
+}

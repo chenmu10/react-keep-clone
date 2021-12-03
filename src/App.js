@@ -1,8 +1,8 @@
-import './App.css';
-import Header from './components/Header.jsx'
+import "./App.css";
+import Header from "./components/Header.jsx";
 import NewNote from "./components/NewNote.jsx";
 import NotesList from "./components/NotesList.jsx";
-import {useState} from "react"
+import { useState } from "react";
 
 function App() {
   const initialNotes = [
@@ -16,20 +16,19 @@ function App() {
 
   const [notes, setNotes] = useState(initialNotes);
 
-    function addNote(newNote) {
-        setNotes( [...notes,newNote]);
-    }
-  
-  function deleteNote(id) {
-    setNotes(notes.filter((note) => note.id !== id));
+  function addNote(newNote) {
+    setNotes([...notes, newNote]);
+  }
 
+  function deleteNote(id) {
+    setNotes([...notes.filter((note) => note.id !== id)]);
   }
 
   return (
     <div className="App">
       <Header />
-      <NewNote addNewNoteHandler={addNote}/>
-      <NotesList notesList={notes}/>
+      <NewNote addNewNoteHandler={addNote} />
+      <NotesList deleteNote={deleteNote} notesList={notes} />
     </div>
   );
 }

@@ -1,0 +1,61 @@
+.app-name {
+  font-size: 1.2rem;
+  color: #5f6368;
+}
+.menu {
+  display: flex;
+  border: 2px solid lightgrey;
+  justify-content: space-around;
+  align-items: center;
+}
+li {
+  cursor: pointer;
+  list-style-type: none;
+  padding: 10px;
+  margin: 0 20px;
+  position: relative;
+  font-size: 1.3em;
+}
+
+.search-bar {
+  flex-grow: 2;
+}
+
+.action-icon:hover {
+  background: #f1f3f4;
+  border-radius: 50%;
+}
+
+.action-icon:hover::after {
+  content: "tooltip";
+  position: absolute;
+  top: 35px;
+  left: -6px;
+  background-color: grey;
+  color: white;
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 0.7em;
+}
+
+.input-search {
+  padding: 20px 100px;
+  border-radius: 10px;
+  background-color: #f1f3f4;
+  border: none;
+  font-size: 1.1rem;
+}
+
+.inside-icon {
+  position: relative;
+}
+
+.inside-icon.search-icon {
+  left: 35px;
+  top: 5px;
+}
+
+.inside-icon.delete-icon {
+  right: 35px;
+  top: 5px;
+}

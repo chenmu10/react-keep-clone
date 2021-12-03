@@ -1,12 +1,24 @@
-import React from 'react';
-import Note from './Note';
+import React from "react";
+import Note from "./Note";
+import './styles/NotesList.css';
+const NotesList = ({ notesList, deleteNote }) => {
+  function handleDelete(e, id) {
+    deleteNote(id);
+  }
 
-const NotesList = ({notesList}) => {
-    return (
-        <div className="notes-list-container">
-            {notesList.map(note => <Note key={note.id} id={note.id} title={note.title} content={note.content} />)}
-        </div>
-    );
-}
+  return (
+    <div className="notes-list-container">
+      {notesList.map((note) => (
+        <Note
+          key={note.id}
+          id={note.id}
+          title={note.title}
+          content={note.content}
+          handleDelete={handleDelete}
+        />
+      ))}
+    </div>
+  );
+};
 
 export default NotesList;

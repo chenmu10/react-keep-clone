@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './styles/NewNote.css';
 
 const NewNote = (props) => {
     let isOpenFullForm=false;
@@ -8,17 +9,15 @@ const NewNote = (props) => {
     const [newNote, setNote] = useState({});
 
     function openFullForm(e) {
-        e.preventDefault();
         isOpenFullForm = true;
     }
 
     function addNewNote(e) {
         const id = new Date().getTime();
         const note = { id: id, title: text, content: text };
-        console.log({ note });
-        
-        props.addNewNoteHandler(note);
-        e.preventDefault();
+        setText('');
+      props.addNewNoteHandler(note);
+      
     }
 
     return (
@@ -30,7 +29,7 @@ const NewNote = (props) => {
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
-        <button onClick={addNewNote}>Save</button>
+        <button id="add-note-button" onClick={addNewNote}>Save</button>
 
         {/*{isOpenFullForm && <OpenForm />}*/}
       </div>
