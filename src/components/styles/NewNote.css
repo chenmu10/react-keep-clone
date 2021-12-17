@@ -5,12 +5,12 @@
     justify-content: center;
 }
 
-.new-note-container > input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+.new-note-container > div::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #4e4646;
   opacity: 1; /* Firefox */
 }
 
-.new-note-container > input {
+.new-note-container > div {
   width: 40%;
   font-size: 1.2em;
   color: #000;

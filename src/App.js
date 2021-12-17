@@ -3,6 +3,12 @@ import Header from "./components/Header.jsx";
 import NewNote from "./components/NewNote.jsx";
 import NotesList from "./components/NotesList.jsx";
 import { useState } from "react";
+import styled from "styled-components";
+
+const Heading = styled.h1`
+  font-size: 18px;
+  color: blue;
+`;
 
 function App() {
   const initialNotes = [
@@ -17,7 +23,7 @@ function App() {
   const [notes, setNotes] = useState(initialNotes);
 
   function addNote(newNote) {
-    setNotes([...notes, newNote]);
+    setNotes([...notes, newNote]); 
   }
 
   function deleteNote(id) {
@@ -26,6 +32,7 @@ function App() {
 
   return (
     <div className="App">
+      <Heading>Hey User</Heading>
       <Header />
       <NewNote addNewNoteHandler={addNote} />
       <NotesList deleteNote={deleteNote} notesList={notes} />
